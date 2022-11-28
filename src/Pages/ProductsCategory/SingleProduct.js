@@ -1,16 +1,16 @@
 import React from "react";
-
+import { HiCheck } from "react-icons/hi";
 const SingleProduct = ({ product, handleClick }) => {
   const {
     name,
     price,
     img,
-    details,
     resale_price,
     seller,
     location,
     old,
     posted_time,
+    status,
   } = product;
 
   return (
@@ -37,9 +37,15 @@ const SingleProduct = ({ product, handleClick }) => {
           </span>
         </p>
         <p className="flex justify-between text-secondary">
-          <span>
-            <strong>Seller: {seller}</strong>
-          </span>
+          <>
+            {status === "verified" ? (
+              <span className="flex">
+                <HiCheck /> Seller: {seller}
+              </span>
+            ) : (
+              <strong>Seller: {seller}</strong>
+            )}
+          </>
           <span>
             <strong>Location: {location}</strong>
           </span>

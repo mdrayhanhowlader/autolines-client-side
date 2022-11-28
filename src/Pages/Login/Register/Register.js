@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "./../../../contexts/AuthProvider";
 import useToken from "./../../../hooks/useToken";
+import { toast } from "react-hot-toast";
 
 const Register = () => {
   const {
@@ -59,7 +60,10 @@ const Register = () => {
         setCreatedUserEmail(email);
         // getUserToken(email);
         console.log(data);
-        reset();
+        if (data.acknowledged === true) {
+          toast.success("successful");
+          reset();
+        }
       });
   };
 

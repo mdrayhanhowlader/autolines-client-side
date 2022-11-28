@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import { toast } from "react-hot-toast";
 
 const Seller = () => {
   const { data: sellers = [], refetch } = useQuery({
@@ -51,7 +52,9 @@ const Seller = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("seccessfully verified");
+        if (data.modifiedCount > 0) {
+          console.log("hello");
+        }
         refetch();
         console.log(data);
       });
