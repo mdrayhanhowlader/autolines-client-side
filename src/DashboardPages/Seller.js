@@ -45,6 +45,18 @@ const Seller = () => {
       });
   };
 
+  const handleVerify = (email) => {
+    fetch(`http://localhost:5000/verifiedseller?email=${email}`, {
+      method: "PUT",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("seccessfully verified");
+        refetch();
+        console.log(data);
+      });
+  };
+
   return (
     <div>
       <h2>Seller {sellers?.length}</h2>
@@ -57,6 +69,7 @@ const Seller = () => {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Make Admin</th>
+                <th>Verify</th>
                 <th>Delete</th>
               </tr>
             </thead>
@@ -74,6 +87,20 @@ const Seller = () => {
                       >
                         Make Admin
                       </button>
+                    )}
+                  </td>
+                  <td>
+                    {seller.status !== "verified" ? (
+                      <button
+                        onClick={() => handleVerify(seller.email)}
+                        className="btn btn-xs btn-primary"
+                      >
+                        Verify
+                      </button>
+                    ) : (
+                      <p className="badge badge-outline text-green-500">
+                        Verified
+                      </p>
                     )}
                   </td>
                   <td>

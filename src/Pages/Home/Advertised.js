@@ -1,9 +1,31 @@
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import AdvertisedCard from "./AdvertisedCard";
 
 const Advertised = () => {
+  const { data: promotes = [] } = useQuery({
+    queryKey: [],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/promoteditem");
+      const data = await res.json();
+      return data;
+    },
+  });
   return (
     <div>
-      <h2 className="text-3xl md:text-5xl text-center font-semibold my-16 text-primary"></h2>
+      <div>
+        <h2 className="text-center text-3xl text-primary my-8 font-semibold">
+          Best Deal
+        </h2>
+        <div className=" w-4/5 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
+          {promotes.map((promote) => (
+            <AdvertisedCard
+              key={promote?.key}
+              promote={promote}
+            ></AdvertisedCard>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
