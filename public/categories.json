@@ -1,0 +1,17 @@
+[
+  {
+    "category_id": "01",
+    "category_name": "SUV",
+    "category_img": "https://images.pexels.com/photos/164654/pexels-photo-164654.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category_id": "02",
+    "category_name": "SEDAN",
+    "category_img": "https://images.pexels.com/photos/193021/pexels-photo-193021.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category_id": "03",
+    "category_name": "VAN",
+    "category_img": "https://images.pexels.com/photos/1426968/pexels-photo-1426968.jpeg?auto=compress&cs=tinysrgb&w=600"
+  }
+]
