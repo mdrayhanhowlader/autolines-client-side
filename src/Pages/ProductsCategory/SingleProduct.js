@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HiCheck } from "react-icons/hi";
+import { AuthContext } from "../../contexts/AuthProvider";
 const SingleProduct = ({ product, handleClick }) => {
+  const { user } = useContext(AuthContext);
   const {
     name,
     price,
@@ -12,6 +14,24 @@ const SingleProduct = ({ product, handleClick }) => {
     posted_time,
     status,
   } = product;
+
+  const handleWishlist = (em, pd) => {
+    const email = em;
+    const name = pd.name;
+    const resale_price = pd.resale_price;
+    const productInfo = { email, name, resale_price };
+    fetch("http://localhost:5000/wishlist", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(productInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -51,7 +71,11 @@ const SingleProduct = ({ product, handleClick }) => {
           </span>
         </p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">Add To Favourite</div>
+          <div className="badge badge-outline">
+            <label onClick={() => handleWishlist(user?.email, product)}>
+              Wishlist
+            </label>
+          </div>
           <div className="badge badge-outline">
             <label htmlFor="booking-modal" onClick={() => handleClick(product)}>
               Book Now

@@ -15,6 +15,10 @@ import PrivateRoute from "./PrivateRoute";
 import AllUsers from "./../../DashboardPages/AllUsers/AllUsers";
 import ManageProducts from "../../DashboardPages/ManageProducts/ManageProducts";
 import MyProducts from "../../DashboardPages/SellerPages/MyProducts";
+import MyWishlist from "../../DashboardPages/BuyerPages/MyWishlist";
+import MyBookings from "../../DashboardPages/BuyerPages/MyBookings";
+import Error from "../../Pages/Error/Error";
+import Payment from "../../DashboardPages/BuyerPages/Payment";
 
 const router = createBrowserRouter([
   {
@@ -85,7 +89,26 @@ const router = createBrowserRouter([
         path: "/dashboard/myproducts",
         element: <MyProducts></MyProducts>,
       },
+      {
+        path: "/dashboard/mywishlist",
+        element: <MyWishlist></MyWishlist>,
+      },
+      {
+        path: "/dashboard/mybookings",
+        element: <MyBookings></MyBookings>,
+      },
+      {
+        path: "/dashboard/payment/:id",
+        element: <Payment></Payment>,
+        loader: ({ params }) => {
+          return fetch(`http://localhost:5000/bookings/${params.id}`);
+        },
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
   },
 ]);
 

@@ -3,7 +3,7 @@ import Menu from "./Menu";
 
 const Header = () => {
   return (
-    <div>
+    <div className="py-4">
       <Menu></Menu>
     </div>
   );

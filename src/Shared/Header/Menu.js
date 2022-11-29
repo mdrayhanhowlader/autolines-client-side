@@ -9,7 +9,7 @@ const Menu = () => {
     logOut();
   };
   return (
-    <div>
+    <div className="w-4/5 mx-auto">
       <Navbar fluid={true} rounded={true}>
         <label
           htmlFor="dashboard-drawer"
@@ -32,7 +32,7 @@ const Menu = () => {
           </svg>
         </label>
         <Navbar.Brand href="/">
-          <span className="self-center whitespace-nowrap text-xl md:text-3xl font-semibold text-green-700 dark:text-white">
+          <span className="self-center whitespace-nowrap text-xl md:text-3xl font-semibold uppercase text-primary dark:text-white">
             Autolines
           </span>
         </Navbar.Brand>

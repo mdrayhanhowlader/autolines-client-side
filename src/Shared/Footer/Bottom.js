@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Bottom = () => {
   return (
     <Footer container={true}>
-      <div className="w-full text-center">
+      <div className="w-4/5 mx-auto text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <Link to="/" className="text-2xl font-semibold text-primary">
             Autolines
