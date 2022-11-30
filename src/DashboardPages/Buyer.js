@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { toast } from "react-hot-toast";
 
 const Buyer = () => {
   const { data: buyers = [], refetch } = useQuery({
@@ -20,7 +21,7 @@ const Buyer = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert("admin made successfully");
+          toast.success("This customer promoted as an Admin");
           refetch();
         }
         console.log(data);
@@ -36,7 +37,7 @@ const Buyer = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          alert("do you want to delete");
+          toast.error("This Customer has been removed.");
           refetch();
         }
 

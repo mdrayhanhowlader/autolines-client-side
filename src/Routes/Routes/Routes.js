@@ -19,6 +19,9 @@ import Register from "../../Pages/Login/Register/Register";
 import ProductsCategory from "../../Pages/ProductsCategory/ProductsCategory";
 import AllUsers from "./../../DashboardPages/AllUsers/AllUsers";
 import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import SellerRoute from "./SellerRoute";
+import BuyerRoute from "./BuyerRoute";
 
 const router = createBrowserRouter([
   {
@@ -59,47 +62,92 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/manageallproducts",
-        element: <ManageProducts></ManageProducts>,
+        element: (
+          <AdminRoute>
+            <ManageProducts></ManageProducts>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/managebookings",
-        element: <ManageBookings></ManageBookings>,
+        element: (
+          <AdminRoute>
+            <ManageBookings></ManageBookings>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/admin",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/seller",
-        element: <Seller></Seller>,
+        element: (
+          <AdminRoute>
+            <Seller></Seller>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/buyer",
-        element: <Buyer></Buyer>,
+        element: (
+          <AdminRoute>
+            <Buyer></Buyer>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/addproduct",
-        element: <AddProduct></AddProduct>,
-      },
-      {
-        path: "/dashboard/myorders",
-        element: <MyOrders></MyOrders>,
+        element: (
+          <SellerRoute>
+            <AddProduct></AddProduct>
+          </SellerRoute>
+        ),
       },
       {
         path: "/dashboard/myproducts",
-        element: <MyProducts></MyProducts>,
+        element: (
+          <SellerRoute>
+            <MyProducts></MyProducts>
+          </SellerRoute>
+        ),
       },
       {
+        path: "/dashboard/myorders",
+        element: (
+          <BuyerRoute>
+            <MyOrders></MyOrders>
+          </BuyerRoute>
+        ),
+      },
+
+      {
         path: "/dashboard/mywishlist",
-        element: <MyWishlist></MyWishlist>,
+        element: (
+          <BuyerRoute>
+            <MyWishlist></MyWishlist>
+          </BuyerRoute>
+        ),
       },
       {
         path: "/dashboard/mybookings",
-        element: <MyBookings></MyBookings>,
+        element: (
+          <BuyerRoute>
+            <MyBookings></MyBookings>
+          </BuyerRoute>
+        ),
       },
       {
         path: "/dashboard/payment/:id",
-        element: <Payment></Payment>,
+        element: (
+          <BuyerRoute>
+            <Payment></Payment>
+          </BuyerRoute>
+        ),
         loader: ({ params }) => {
           return fetch(
             `https://autolines-server.vercel.app/bookings/${params.id}`

@@ -22,7 +22,7 @@ const Seller = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          toast.success("Successfully added");
+          toast.success("This seller promoted as an Admin");
           refetch();
         }
         console.log(data);
@@ -38,7 +38,7 @@ const Seller = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          alert("do you want to delete");
+          toast.error("This seller has been removed");
           refetch();
         }
 
@@ -53,7 +53,7 @@ const Seller = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          toast.custom();
+          toast.success("Seller Verified Successfully");
         }
         refetch();
         console.log(data);

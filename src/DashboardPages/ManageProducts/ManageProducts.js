@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { toast } from "react-hot-toast";
 
 const ManageProducts = () => {
   const { data: products = [], refetch } = useQuery({
@@ -21,7 +22,7 @@ const ManageProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          alert("do you want to delete? if you want please press ok!");
+          toast.error("This product has been removed");
           refetch();
         }
         console.log(data);

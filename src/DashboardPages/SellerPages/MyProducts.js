@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
@@ -23,12 +24,26 @@ const MyProducts = () => {
     }).then((res) =>
       res.json().then((data) => {
         console.log(data);
+        if (data.acknowledge === true) {
+          toast.success("This product listed for promote");
+        }
         refetch();
       })
     );
   };
   const handleDelete = (id) => {
     console.log(id);
+    fetch(`https://autolines-server.vercel.app/products/admin/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.error("This product has been removed");
+          refetch();
+        }
+        console.log(data);
+      });
   };
 
   const handlePromoteDelete = (id) => {
@@ -43,7 +58,9 @@ const MyProducts = () => {
   };
   return (
     <div>
-      <h2 className="text-3xl">{products.length}</h2>
+      <h2 className="text-xl mb-4 text-cyan-300">
+        My Products: {products.length}
+      </h2>
       <div>
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
