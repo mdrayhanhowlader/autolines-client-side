@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { toast } from "react-hot-toast";
 
 const Seller = () => {
   const { data: sellers = [], refetch } = useQuery({
@@ -21,7 +22,7 @@ const Seller = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert("admin made successfully");
+          toast.success("Successfully added");
           refetch();
         }
         console.log(data);
@@ -52,7 +53,7 @@ const Seller = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          console.log("hello");
+          toast.custom();
         }
         refetch();
         console.log(data);
