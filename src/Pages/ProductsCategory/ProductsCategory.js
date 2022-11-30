@@ -37,7 +37,9 @@ const ProductsCategory = () => {
             <label htmlFor="booking-modal" className="modal cursor-pointer">
               <label className="modal-box relative" htmlFor="">
                 <p className="py-4">
-                  <Link to="/register">Please Create Buyer Account!!</Link>
+                  <Link className="text-cyan-500" to="/register">
+                    For Book This Product Please Create Buyer Account!
+                  </Link>
                 </p>
               </label>
             </label>

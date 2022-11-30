@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const BookingModal = ({ modal }) => {
   const { user } = useContext(AuthContext);
@@ -35,6 +36,10 @@ const BookingModal = ({ modal }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.acknowledged === true) {
+          toast.success("Product has been booked successfully");
+        }
+        form.reset();
       });
   };
 
@@ -93,7 +98,7 @@ const BookingModal = ({ modal }) => {
             <input
               className="btn btn-accent w-full"
               type="submit"
-              value="Submit"
+              value="Book Now"
             />
           </form>
         </label>
