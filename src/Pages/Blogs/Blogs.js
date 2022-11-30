@@ -14,19 +14,22 @@ const Blogs = () => {
           application?
         </h4>
         <p className="text-md font-semibold text-slate-900 mb-4">
-          SQL is the programming language used to interface with relational
-          databases. (Relational databases model data as records in rows and
-          tables with logical links between them). NoSQL is a class of DBMs that
-          are non-relational and generally do not use SQL
+          Local (UI) state - Local state is data we manage in one or another
+          component.Local state is most often managed in React using the
+          useState hook.For example, local state would be needed to show or hide
+          a modal component or to track values for a form component, such as
+          form submission, when the form is disabled and the values of a form’s
+          inputs.
         </p>
         <h4 className="text-xl font-semibold text-cyan-500">
-          2: What is JWT, and how does it work?
+          2: How does prototypical inheritance work?
         </h4>
         <p className="text-md font-semibold text-slate-900 mb-4">
-          JSON Web Token (JWT) is an open standard (RFC 7519) that defines a
-          compact and self-contained way for securely transmitting information
-          between parties as a JSON object. This information can be verified and
-          trusted because it is digitally signed.
+          The Prototypal Inheritance is a feature in javascript used to add
+          methods and properties in objects. It is a method by which an object
+          can inherit the properties and methods of another object.
+          Traditionally, in order to get and set the Prototype of an object, we
+          use Object. getPrototypeOf and Object.
         </p>
         <h4 className="text-xl font-semibold text-cyan-500">
           3: What is the difference between javascript and NodeJS?
