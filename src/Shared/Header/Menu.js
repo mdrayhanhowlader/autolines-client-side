@@ -9,8 +9,8 @@ const Menu = () => {
     logOut();
   };
   return (
-    <div className="w-4/5 mx-auto">
-      <Navbar fluid={true} rounded={true} className="">
+    <div className="w-full md:w-4/5 mx-auto hover:text-cyan-300">
+      <Navbar fluid={true} rounded={true} className="border border-cyan-300">
         <label
           htmlFor="dashboard-drawer"
           tabIndex={2}
@@ -32,7 +32,8 @@ const Menu = () => {
           </svg>
         </label>
         <Navbar.Brand href="/">
-          <span className="self-center whitespace-nowrap text-xl md:text-3xl font-semibold uppercase text-primary dark:text-white">
+          {/* <span className="bg-cyan-300 rounded-full p-6"></span> */}
+          <span className="self-center whitespace-nowrap text-xl md:text-4xl font-semibold uppercase text-cyan-300 dark:text-white">
             Autolines
           </span>
         </Navbar.Brand>
@@ -51,7 +52,7 @@ const Menu = () => {
             >
               <Dropdown.Header>
                 <span className="block text-sm">{user?.displayName}</span>
-                <span className="block truncate text-sm font-medium">
+                <span className="block hover:text-cyan-300 truncate text-sm font-medium">
                   {user?.email}
                 </span>
               </Dropdown.Header>
@@ -67,7 +68,7 @@ const Menu = () => {
           )}
           <Navbar.Toggle />
         </div>
-        <Navbar.Collapse>
+        <Navbar.Collapse className="hover:text-cyan-300">
           <Navbar.Link active={true}>
             <Link to="/">Home</Link>
           </Navbar.Link>

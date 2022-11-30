@@ -3,7 +3,7 @@ import Bottom from "./Bottom";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="mt-20">
       <Bottom></Bottom>
     </div>
   );

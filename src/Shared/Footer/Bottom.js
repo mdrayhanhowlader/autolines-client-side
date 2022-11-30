@@ -7,18 +7,23 @@ const Bottom = () => {
     <Footer container={true}>
       <div className="w-4/5 mx-auto text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
-          <Link to="/" className="text-2xl font-semibold text-primary">
+          <Link
+            to="/"
+            className="text-lg md:text-3xl uppercase font-semibold text-cyan-300"
+          >
             Autolines
           </Link>
           <Footer.LinkGroup>
-            <Footer.Link href="#">About</Footer.Link>
-            <Footer.Link href="#">Privacy Policy</Footer.Link>
-            <Footer.Link href="#">Licensing</Footer.Link>
-            <Footer.Link href="#">Contact</Footer.Link>
+            <Footer.Link>
+              <Link to="/blogs">Blogs</Link>
+            </Footer.Link>
+            <Footer.Link>
+              <Link to="/blogs">About us</Link>
+            </Footer.Link>
           </Footer.LinkGroup>
         </div>
         <Footer.Divider />
-        <Footer.Copyright href="/" by="Autolines™" year={2022} />
+        <Footer.Copyright href="/" by="AUTOLINES™" year={2022} />
       </div>
     </Footer>
   );

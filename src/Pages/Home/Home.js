@@ -3,6 +3,7 @@ import Advertised from "./Advertised";
 import Banner from "./Banner";
 import Categories from "./Categories/Categories";
 import useTitle from "./../../hooks/useTitle";
+import Exclusive from "./Exclusive";
 
 const Home = () => {
   useTitle("Home");
@@ -11,6 +12,7 @@ const Home = () => {
       <Banner></Banner>
       <Advertised></Advertised>
       <Categories></Categories>
+      <Exclusive></Exclusive>
     </div>
   );
 };
