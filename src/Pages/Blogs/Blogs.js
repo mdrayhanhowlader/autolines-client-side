@@ -10,7 +10,8 @@ const Blogs = () => {
       </h2>
       <div className="w-4/5 mx-auto bg-slate-200 p-4 rounded-lg">
         <h4 className="text-xl font-semibold text-cyan-500">
-          1: Difference between SQL and NoSQL
+          1: What are the different ways to manage a state in a React
+          application?
         </h4>
         <p className="text-md font-semibold text-slate-900 mb-4">
           SQL is the programming language used to interface with relational

@@ -4,8 +4,10 @@ import SingleProduct from "./SingleProduct";
 import BookingModal from "./BookingModal";
 import { AuthContext } from "../../contexts/AuthProvider";
 import useBuyer from "./../../hooks/useBuyer";
+import useTitle from "./../../hooks/useTitle";
 
 const ProductsCategory = () => {
+  useTitle("Category");
   const { user } = useContext(AuthContext);
   const [isBuyer] = useBuyer(user?.email);
   const [modal, setModal] = useState([]);
