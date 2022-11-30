@@ -8,7 +8,7 @@ const MyOrders = () => {
     queryKey: [],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/payments?email=${user?.email}`
+        `https://autolines-server.vercel.app/payments?email=${user?.email}`
       );
       const data = await res.json();
       return data;
