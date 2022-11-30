@@ -20,7 +20,7 @@ const SingleProduct = ({ product, handleClick }) => {
     const name = pd.name;
     const resale_price = pd.resale_price;
     const productInfo = { email, name, resale_price };
-    fetch("http://localhost:5000/wishlist", {
+    fetch("https://autolines-server.vercel.app/wishlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",

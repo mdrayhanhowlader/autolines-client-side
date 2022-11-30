@@ -1,19 +1,18 @@
-import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { toast } from "react-hot-toast";
+import React from "react";
 
 const Seller = () => {
   const { data: sellers = [], refetch } = useQuery({
     queryKey: ["sellers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/sellers");
+      const res = await fetch("https://autolines-server.vercel.app/sellers");
       const data = await res.json();
       return data;
     },
   });
 
   const handleAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://autolines-server.vercel.app/users/admin/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -29,7 +28,7 @@ const Seller = () => {
       });
   };
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/users/delete/${id}`, {
+    fetch(`https://autolines-server.vercel.app/users/delete/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -47,7 +46,7 @@ const Seller = () => {
   };
 
   const handleVerify = (email) => {
-    fetch(`http://localhost:5000/verifiedseller?email=${email}`, {
+    fetch(`https://autolines-server.vercel.app/verifiedseller?email=${email}`, {
       method: "PUT",
     })
       .then((res) => res.json())

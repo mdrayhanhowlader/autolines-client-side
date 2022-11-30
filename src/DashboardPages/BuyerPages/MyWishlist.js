@@ -5,7 +5,7 @@ const MyWishlist = () => {
   const { user } = useContext(AuthContext);
   const [wishlists, setWishlists] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/wishlist?email=${user?.email}`)
+    fetch(`https://autolines-server.vercel.app/wishlist?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setWishlists(data);
@@ -14,7 +14,7 @@ const MyWishlist = () => {
 
   const handleRemove = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/deleteWishlist/${id}`, {
+    fetch(`https://autolines-server.vercel.app/deleteWishlist/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

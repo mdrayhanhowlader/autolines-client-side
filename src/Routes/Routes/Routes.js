@@ -1,24 +1,24 @@
 import { createBrowserRouter } from "react-router-dom";
 import Buyer from "../../DashboardPages/Buyer";
+import MyBookings from "../../DashboardPages/BuyerPages/MyBookings";
 import MyOrders from "../../DashboardPages/BuyerPages/MyOrders";
+import MyWishlist from "../../DashboardPages/BuyerPages/MyWishlist";
+import Payment from "../../DashboardPages/BuyerPages/Payment";
 import Dashboard from "../../DashboardPages/Dashboard/Dashboard";
 import ManageBookings from "../../DashboardPages/ManageBookings/ManageBookings";
+import ManageProducts from "../../DashboardPages/ManageProducts/ManageProducts";
 import Seller from "../../DashboardPages/Seller";
 import AddProduct from "../../DashboardPages/SellerPages/AddProduct";
+import MyProducts from "../../DashboardPages/SellerPages/MyProducts";
 import DashboardLayout from "../../layout/DashboardLayout";
 import Main from "../../layout/Main";
+import Error from "../../Pages/Error/Error";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import ProductsCategory from "../../Pages/ProductsCategory/ProductsCategory";
-import PrivateRoute from "./PrivateRoute";
 import AllUsers from "./../../DashboardPages/AllUsers/AllUsers";
-import ManageProducts from "../../DashboardPages/ManageProducts/ManageProducts";
-import MyProducts from "../../DashboardPages/SellerPages/MyProducts";
-import MyWishlist from "../../DashboardPages/BuyerPages/MyWishlist";
-import MyBookings from "../../DashboardPages/BuyerPages/MyBookings";
-import Error from "../../Pages/Error/Error";
-import Payment from "../../DashboardPages/BuyerPages/Payment";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         path: "/categories/:id",
         element: <ProductsCategory></ProductsCategory>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(`https://autolines-server.vercel.app/categories/${params.id}`),
       },
     ],
   },
@@ -101,7 +101,9 @@ const router = createBrowserRouter([
         path: "/dashboard/payment/:id",
         element: <Payment></Payment>,
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/bookings/${params.id}`);
+          return fetch(
+            `https://autolines-server.vercel.app/bookings/${params.id}`
+          );
         },
       },
     ],

@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { AuthContext } from "../../contexts/AuthProvider";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
@@ -9,7 +9,7 @@ const MyBookings = () => {
     queryKey: [],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/allbookings?email=${user.email}`,
+        `https://autolines-server.vercel.app/allbookings?email=${user.email}`,
         {
           headers: {
             authorization: `bearer ${localStorage.getItem("accessToken")}`,

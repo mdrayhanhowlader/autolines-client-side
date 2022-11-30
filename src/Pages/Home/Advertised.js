@@ -1,12 +1,14 @@
-import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import AdvertisedCard from "./AdvertisedCard";
 
 const Advertised = () => {
   const { data: promotes = [] } = useQuery({
     queryKey: [],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/promoteditem");
+      const res = await fetch(
+        "https://autolines-server.vercel.app/promoteditem"
+      );
       const data = await res.json();
       return data;
     },

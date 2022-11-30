@@ -1,6 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { useQuery } from "@tanstack/react-query";
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
@@ -8,7 +8,7 @@ const MyProducts = () => {
     queryKey: [],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/sellerproducts?email=${user?.email}`
+        `https://autolines-server.vercel.app/sellerproducts?email=${user?.email}`
       );
       const data = await res.json();
       return data;
@@ -18,7 +18,7 @@ const MyProducts = () => {
 
   const handlePromote = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/promoteproducts/${id}`, {
+    fetch(`https://autolines-server.vercel.app/promoteproducts/${id}`, {
       method: "PUT",
     }).then((res) =>
       res.json().then((data) => {
@@ -32,7 +32,7 @@ const MyProducts = () => {
   };
 
   const handlePromoteDelete = (id) => {
-    fetch(`http://localhost:5000/removepromoteproducts/${id}`, {
+    fetch(`https://autolines-server.vercel.app/removepromoteproducts/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

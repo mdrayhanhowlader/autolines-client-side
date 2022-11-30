@@ -10,7 +10,7 @@ const Menu = () => {
   };
   return (
     <div className="w-4/5 mx-auto">
-      <Navbar fluid={true} rounded={true}>
+      <Navbar fluid={true} rounded={true} className="">
         <label
           htmlFor="dashboard-drawer"
           tabIndex={2}

@@ -1,17 +1,17 @@
-import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import React from "react";
 
 const Buyer = () => {
   const { data: buyers = [], refetch } = useQuery({
     queryKey: ["buyers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/buyers");
+      const res = await fetch("https://autolines-server.vercel.app/buyers");
       const data = await res.json();
       return data;
     },
   });
   const handleAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://autolines-server.vercel.app/users/admin/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -27,7 +27,7 @@ const Buyer = () => {
       });
   };
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/users/delete/${id}`, {
+    fetch(`https://autolines-server.vercel.app/users/delete/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { AuthContext } from "./../../../contexts/AuthProvider";
 import useToken from "./../../../hooks/useToken";
-import { toast } from "react-hot-toast";
 
 const Register = () => {
   const {
@@ -47,7 +47,7 @@ const Register = () => {
       role,
     };
 
-    fetch("http://localhost:5000/users", {
+    fetch("https://autolines-server.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -78,7 +78,7 @@ const Register = () => {
           role: "Buyer",
         };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://autolines-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -96,7 +96,7 @@ const Register = () => {
   };
 
   // const getUserToken = (email) => {
-  //   fetch(`http://localhost:5000/jwt?email=${email}`)
+  //   fetch(`https://autolines-server.vercel.app/jwt?email=${email}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       if (data.accessToken) {

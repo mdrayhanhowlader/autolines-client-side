@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const ManageBookings = () => {
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/bookings`;
+  const url = `https://autolines-server.vercel.app/bookings`;
   const { data: bookings = [], refetch } = useQuery({
     queryKey: ["bookings"],
     queryFn: async () => {
@@ -19,7 +19,7 @@ const ManageBookings = () => {
   });
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/deletebookings/${id}`, {
+    fetch(`https://autolines-server.vercel.app/deletebookings/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -5,14 +5,14 @@ const AllUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["admin"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/admin");
+      const res = await fetch("https://autolines-server.vercel.app/admin");
       const data = await res.json();
       return data;
     },
   });
 
   const handleAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://autolines-server.vercel.app/users/admin/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -29,7 +29,7 @@ const AllUsers = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/admin/delete/${id}`, {
+    fetch(`https://autolines-server.vercel.app/admin/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

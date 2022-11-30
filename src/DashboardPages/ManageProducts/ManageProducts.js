@@ -1,11 +1,11 @@
-import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import React from "react";
 
 const ManageProducts = () => {
   const { data: products = [], refetch } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/products", {
+      const res = await fetch("https://autolines-server.vercel.app/products", {
         headers: {
           authorization: `bearer ${localStorage.getItem("accessToken")}`,
         },
@@ -15,7 +15,7 @@ const ManageProducts = () => {
     },
   });
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/products/admin/delete/${id}`, {
+    fetch(`https://autolines-server.vercel.app/products/admin/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

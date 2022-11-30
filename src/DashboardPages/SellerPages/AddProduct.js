@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthProvider";
-import { useForm } from "react-hook-form";
 import date from "date-and-time";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
@@ -77,7 +77,7 @@ const AddProduct = () => {
       posted_time,
     };
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://autolines-server.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -210,7 +210,7 @@ const AddProduct = () => {
             <input
               type="submit"
               className="btn btn-outline w-full max-w-xs mt-6"
-              value="Sign Up"
+              value="Add Product"
             />
           </div>
         </form>
