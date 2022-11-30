@@ -34,14 +34,10 @@ const MyWishlist = () => {
           <table className="table w-full">
             <thead>
               <tr>
-                <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th>
+                <th></th>
                 <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
+                <th>Price</th>
+                <th>Remove</th>
                 <th></th>
               </tr>
             </thead>
@@ -70,9 +66,6 @@ const MyWishlist = () => {
                     <span className="badge badge-ghost badge-sm">
                       {wishlist.resale_price}
                     </span>
-                  </td>
-                  <td>
-                    <button className="btn btn-primary btn-xs">Pay Now</button>
                   </td>
                   <th>
                     <button
