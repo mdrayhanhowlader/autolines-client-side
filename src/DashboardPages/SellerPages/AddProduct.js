@@ -2,6 +2,7 @@ import date from "date-and-time";
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
@@ -87,6 +88,9 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.acknowledged === true) {
+          toast.success("product uploaded successfully");
+        }
         reset();
       });
   };

@@ -24,7 +24,7 @@ const MyProducts = () => {
     }).then((res) =>
       res.json().then((data) => {
         console.log(data);
-        if (data.acknowledge === true) {
+        if (data.acknowledged === true) {
           toast.success("This product listed for promote");
         }
         refetch();
