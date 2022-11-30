@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import useTitle from "./../../hooks/useTitle";
+import { toast } from "react-hot-toast";
 
 const AllUsers = () => {
   useTitle("All Users");
@@ -23,7 +24,7 @@ const AllUsers = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert("admin made successfully");
+          toast.success("admin made successfully");
           refetch();
         }
         console.log(data);

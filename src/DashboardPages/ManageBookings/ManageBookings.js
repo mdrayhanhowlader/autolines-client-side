@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const ManageBookings = () => {
   const { user } = useContext(AuthContext);
@@ -25,7 +26,7 @@ const ManageBookings = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          alert("do you want to delete? if you want please press ok!");
+          toast.error("Deleted Successfully");
           refetch();
         }
         console.log(data);
