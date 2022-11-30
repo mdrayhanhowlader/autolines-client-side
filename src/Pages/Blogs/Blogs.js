@@ -32,7 +32,7 @@ const Blogs = () => {
           use Object. getPrototypeOf and Object.
         </p>
         <h4 className="text-xl font-semibold text-cyan-500">
-          3: What is the difference between javascript and NodeJS?
+          3: What is a unit test? Why should we write unit tests?
         </h4>
         <p className="text-md font-semibold text-slate-900 mb-4">
           JavaScript is a simple programming language that can be used with any
