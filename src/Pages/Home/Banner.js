@@ -15,7 +15,7 @@ const Banner = () => {
               </div>
             </div>
             <div class="flex flex-col lg:flex-row space-x-2 space-y-3 md:space-x-6   w-full items-center justify-center ">
-              <div class="lg:w-40 w-64 h-40  overflow-hidden rounded-xl ">
+              <div class="lg:w-40 w-64   overflow-hidden rounded-xl ">
                 <img
                   src="https://images.pexels.com/photos/13006670/pexels-photo-13006670.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -53,7 +53,7 @@ const Banner = () => {
                     class=""
                   />
                 </div>
-                <div class="w-32 lg:w-40 h-32  overflow-hidden rounded-xl ">
+                <div class="w-32 lg:w-40 h-40  overflow-hidden rounded-xl ">
                   <img
                     src="https://images.pexels.com/photos/2127037/pexels-photo-2127037.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt=""
@@ -61,7 +61,7 @@ const Banner = () => {
                   />
                 </div>
               </div>
-              <div class="lg:w-40 w-64 h-40  overflow-hidden rounded-xl ">
+              <div class="lg:w-40 w-64   overflow-hidden rounded-xl ">
                 <img
                   src="https://images.pexels.com/photos/261985/pexels-photo-261985.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
