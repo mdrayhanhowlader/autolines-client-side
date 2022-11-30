@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "./../../../contexts/AuthProvider";
 import useToken from "./../../../hooks/useToken";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const {
@@ -105,7 +106,7 @@ const Register = () => {
   //     });
   // };
   return (
-    <div className="bg-cyan-300">
+    <div className="">
       <div className="flex justify-center">
         <div className="w-96 p-7">
           <h2 className="text-3xl font-bold text-center">Sign Up</h2>
@@ -142,8 +143,8 @@ const Register = () => {
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
-            {errors.name && (
-              <p className="text-red-600">{errors.name?.message}</p>
+            {errors.image && (
+              <p className="text-red-600">{errors.image?.message}</p>
             )}
 
             <div className="form-control w-full max-w-xs">
@@ -194,6 +195,13 @@ const Register = () => {
                 value="Sign Up"
               />
               <div className="divider">OR</div>
+              <p>
+                Already have an account?
+                <Link to="/login" className="text-cyan-500">
+                  {" "}
+                  Please Login!
+                </Link>
+              </p>
               <button
                 onClick={handleGoogle}
                 className="btn btn-outline w-full max-w-xs mt-4"

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import useToken from "./../../../hooks/useToken";
 
@@ -32,11 +32,6 @@ const Login = () => {
     setLoginUserEmail(email);
     reset();
   };
-
-  // const googleLogin = async () => {
-  //   await await googleSignIn();
-  //   navigate(from, { replace: true });
-  // };
 
   const handleGoogle = () => {
     googleSignIn()
@@ -106,6 +101,13 @@ const Login = () => {
               value="Login"
             />
             <div className="divider">OR</div>
+            <p>
+              Haven't an account?
+              <Link to="/register" className="text-cyan-500">
+                {" "}
+                Please Register!
+              </Link>
+            </p>
             <button
               onClick={handleGoogle}
               className="btn btn-outline w-full max-w-xs mt-4"
