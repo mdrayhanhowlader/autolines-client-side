@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./../../contexts/AuthProvider";
+import useTitle from "./../../hooks/useTitle";
 
 const MyWishlist = () => {
+  useTitle("Wishlist");
   const { user } = useContext(AuthContext);
   const [wishlists, setWishlists] = useState([]);
   useEffect(() => {

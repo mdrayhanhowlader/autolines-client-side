@@ -4,8 +4,10 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import useAdmin from "./../../hooks/useAdmin";
 import useBuyer from "./../../hooks/useBuyer";
 import useSeller from "./../../hooks/useSeller";
+import useTitle from "./../../hooks/useTitle";
 
 const Dashboard = () => {
+  useTitle("My Bookings");
   const { user } = useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email);
   const [isBuyer] = useBuyer(user?.email);

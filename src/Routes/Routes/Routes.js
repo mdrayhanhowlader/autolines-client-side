@@ -22,6 +22,7 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import SellerRoute from "./SellerRoute";
 import BuyerRoute from "./BuyerRoute";
+import Blogs from "../../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         element: <ProductsCategory></ProductsCategory>,
         loader: ({ params }) =>
           fetch(`https://autolines-server.vercel.app/categories/${params.id}`),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
     ],
   },

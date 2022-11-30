@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { HiCheck } from "react-icons/hi";
+import { GoVerified } from "react-icons/go";
 import { AuthContext } from "../../contexts/AuthProvider";
 const SingleProduct = ({ product, handleClick }) => {
   const { user } = useContext(AuthContext);
@@ -36,17 +36,17 @@ const SingleProduct = ({ product, handleClick }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={img} alt="Shoes" />
+        <img src={img} alt="img" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
+        <h2 className="card-title capitalize">
           {name}
           <div className="badge badge-secondary">Used</div>
         </h2>
         <span>Posted: {posted_time}</span>
         {/* <p>{details}</p> */}
         <p>
-          <strong>Used: {old}</strong>
+          <strong>Used: {old} Year</strong>
         </p>
         <p className="flex justify-between">
           <span>
@@ -59,8 +59,11 @@ const SingleProduct = ({ product, handleClick }) => {
         <p className="flex justify-between text-secondary">
           <>
             {status === "verified" ? (
-              <span className="flex">
-                <HiCheck /> Seller: {seller}
+              <span className="flex items-center">
+                <span>
+                  <GoVerified />
+                </span>{" "}
+                <span> Seller: {seller}</span>
               </span>
             ) : (
               <strong>Seller: {seller}</strong>

@@ -103,7 +103,9 @@ const AddProduct = () => {
               <span className="label1-text">Product Name</span>
             </label>
             <input
-              {...register("name")}
+              {...register("name", {
+                required: "Name is required",
+              })}
               placeholder="Enter Product Name"
               type="text"
               className="input input-bordered w-full max-w-xs"
@@ -115,7 +117,9 @@ const AddProduct = () => {
               <span className="label2-text">Image</span>
             </label>
             <input
-              {...register("image")}
+              {...register("image", {
+                required: "Image is required",
+              })}
               type="file"
               className="input input-bordered w-full max-w-xs"
             />
@@ -126,7 +130,9 @@ const AddProduct = () => {
               <span className="label-text">Number</span>
             </label>
             <input
-              {...register("number")}
+              {...register("number", {
+                required: "Number is required",
+              })}
               placeholder="Number"
               type="text"
               className="input input-bordered w-full max-w-xs"
@@ -137,7 +143,9 @@ const AddProduct = () => {
               <span className="label-text">Uses</span>
             </label>
             <input
-              {...register("old")}
+              {...register("old", {
+                required: "Old is required",
+              })}
               placeholder="Uses Time"
               type="text"
               className="input input-bordered w-full max-w-xs"
@@ -148,7 +156,9 @@ const AddProduct = () => {
               <span className="label-text">Price</span>
             </label>
             <input
-              {...register("price")}
+              {...register("price", {
+                required: "Price is required",
+              })}
               placeholder="Price"
               type="text"
               className="input input-bordered w-full max-w-xs"
@@ -159,7 +169,9 @@ const AddProduct = () => {
               <span className="label-text">Resale Price</span>
             </label>
             <input
-              {...register("resaleprice")}
+              {...register("resaleprice", {
+                required: "Resale Price is required",
+              })}
               placeholder="Resale Price"
               type="text"
               className="input input-bordered w-full max-w-xs"
@@ -170,7 +182,9 @@ const AddProduct = () => {
               <span className="label-text">Location</span>
             </label>
             <input
-              {...register("location")}
+              {...register("location", {
+                required: "Location is required",
+              })}
               placeholder="Enter Location"
               type="text"
               className="input input-bordered w-full max-w-xs"
@@ -182,7 +196,9 @@ const AddProduct = () => {
               <span className="label-text">Category Name</span>
             </label>
             <select
-              {...register("categoryname")}
+              {...register("categoryname", {
+                required: "Category Name is required",
+              })}
               className="select select-bordered w-full max-w-xs"
             >
               <option selected>SUV</option>
@@ -195,7 +211,9 @@ const AddProduct = () => {
               <span className="label-text">Category ID</span>
             </label>
             <select
-              {...register("categoryid")}
+              {...register("categoryid", {
+                required: "Category Id is required",
+              })}
               className="select select-bordered w-full max-w-xs"
             >
               <option value="01" selected>

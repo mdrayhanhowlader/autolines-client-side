@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import useTitle from "./../../hooks/useTitle";
 
 const AllUsers = () => {
+  useTitle("All Users");
   const { data: users = [], refetch } = useQuery({
     queryKey: ["admin"],
     queryFn: async () => {
