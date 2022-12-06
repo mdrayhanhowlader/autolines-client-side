@@ -34,9 +34,9 @@ const SingleProduct = ({ product, handleClick }) => {
   };
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-full mx-auto bg-base-100 shadow-xl">
       <figure>
-        <img src={img} alt="img" />
+        <img className="w-full mx-auto" src={img} alt="img" />
       </figure>
       <div className="card-body">
         <h2 className="card-title capitalize">

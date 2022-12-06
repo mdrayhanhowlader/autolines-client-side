@@ -17,7 +17,7 @@ const ProductsCategory = () => {
   };
   return (
     <div className="w-full mx-auto">
-      <div className="w-4/5 mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="w-4/5 mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-6">
         {products.map((product) => (
           <SingleProduct
             key={product._id}
