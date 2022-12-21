@@ -4,7 +4,7 @@ const AdvertisedCard = ({ promote }) => {
   const { img, name, resale_price } = promote;
   return (
     <div>
-      <div class="w-full mx-auto bg-white shadow rounded border border-transparent hover:border-blue-500 cursor-pointer">
+      <div class="w-full mx-auto bg-white shadow rounded border border-transparent hover:border-blue-500 cursor-none pb-4">
         <div
           class="h-48 w-full bg-gray-200 flex flex-col justify-between p-4 bg-cover bg-center"
           style={{ backgroundImage: `url(${img})` }}
@@ -28,7 +28,7 @@ const AdvertisedCard = ({ promote }) => {
           </div>
         </div>
         <div class="">
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between mx-2">
             <h1 class="text-gray-600 font-medium capitalize">{name}</h1>
             <button class="text-gray-500 hover:text-gray-900">
               {/* <svg
@@ -50,7 +50,7 @@ const AdvertisedCard = ({ promote }) => {
           <p class="text-gray-400 text-sm my-1">
             {/* <strong>Price: ${resale_price}</strong> */}
           </p>
-          <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium">
+          <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium mx-2">
             New Arrival
           </span>
         </div>
