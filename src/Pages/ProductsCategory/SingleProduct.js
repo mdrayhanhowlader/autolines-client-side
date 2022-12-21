@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import { BiTime } from "react-icons/bi";
 import { AiFillCar, AiOutlineUser } from "react-icons/ai";
 import { GiPriceTag } from "react-icons/gi";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
 
 const SingleProduct = ({ product, handleClick }) => {
   const { user } = useContext(AuthContext);
@@ -43,10 +44,18 @@ const SingleProduct = ({ product, handleClick }) => {
         <img className="w-full h-52 mx-auto" src={img} alt="img" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title capitalize">
-          {name}
-          <div className="badge badge-secondary">Used</div>
-        </h2>
+        <div className="flex justify-between items-center">
+          <h2 className="card-title capitalize">
+            {name}
+            <div className="badge badge-secondary">Used</div>
+          </h2>
+          <span
+            className="card-title"
+            onClick={() => handleWishlist(user?.email, product)}
+          >
+            <MdOutlineFavoriteBorder />
+          </span>
+        </div>
         <span className="flex items-center">
           <BiTime className="fill-cyan-500" />
           <span className="ml-2">{posted_time}</span>
@@ -87,13 +96,13 @@ const SingleProduct = ({ product, handleClick }) => {
           </>
           <span>{/* <strong>Location: {location}</strong> */}</span>
         </p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">
+        <div className="card-actions mt-2">
+          {/* <div className="badge badge-outline">
             <label onClick={() => handleWishlist(user?.email, product)}>
               Wishlist
             </label>
-          </div>
-          <div className="badge badge-outline">
+          </div> */}
+          <div className="badge badge-secondary p-4">
             <label htmlFor="booking-modal" onClick={() => handleClick(product)}>
               Book Now
             </label>
