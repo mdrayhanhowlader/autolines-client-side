@@ -51,6 +51,7 @@ const SingleProduct = ({ product, handleClick }) => {
           </h2>
           <span
             className="card-title"
+            title="add to wishlist"
             onClick={() => handleWishlist(user?.email, product)}
           >
             <MdOutlineFavoriteBorder />

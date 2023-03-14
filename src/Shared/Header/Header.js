@@ -1,10 +1,12 @@
 import React from "react";
 import Menu from "./Menu";
+import NavMenu from "./NavMenu";
 
 const Header = () => {
   return (
-    <div className="py-4">
-      <Menu></Menu>
+    <div className="">
+      {/* <Menu></Menu> */}
+      <NavMenu />
     </div>
   );
 };
