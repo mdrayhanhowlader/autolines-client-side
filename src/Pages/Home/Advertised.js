@@ -16,10 +16,10 @@ const Advertised = () => {
   return (
     <div>
       <div className="w-4/5 mx-auto my-20">
-        <h2 className="text-center text-3xl md:text-5xl text-cyan-300 pb-12 font-semibold">
-          Our Top's Collections
+        <h2 className="text-2xl md:text-3xl pb-4 font-semibold">
+          The Best offers from Autoline's
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
           {promotes.map((promote) => (
             <AdvertisedCard
               key={promote?.key}

@@ -4,28 +4,27 @@ import { Link } from "react-router-dom";
 const CategoryCard = ({ category }) => {
   const { category_name, category_img, category_id } = category;
   return (
-    <div>
-      <Link to={`/categories/${category_id}`}>
-        <div className="card bg-base-100 shadow-xl rounded-lg">
+    <div className="">
+      <div className="lg:w-full sm:w-1/2 p-4">
+        <div className="flex relative">
           <img
-            className="h-52 rounded-t-lg"
+            alt="gallery"
+            className="rounded-lg absolute inset-0 w-full h-full object-cover object-center"
             src={category_img}
-            alt="categoryimage"
           />
-          <div className="card-body">
-            <div className="flex justify-between">
-              {/* <h2 className="card-title">{category_name}</h2> */}
-              <div className="card-actions justify-end">
-                <Link to={`/categories/${category_id}`}>
-                  <div className="badge badge-secondary p-4">
-                    <p>EXPLORE {category_name}</p>
-                  </div>
-                </Link>
-              </div>
-            </div>
+          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-300 bg-white opacity-0 hover:opacity-80">
+            <h1 className="font-bold text-3xl font- text-center text-[#3A0808] mb-3 uppercase">
+              {category_name}
+            </h1>
+
+            <Link to={`/categories/${category_id}`}>
+              <button className="btn mx-auto w-full btn-outline">
+                View more
+              </button>
+            </Link>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

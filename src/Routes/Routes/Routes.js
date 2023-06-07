@@ -23,6 +23,7 @@ import AdminRoute from "./AdminRoute";
 import SellerRoute from "./SellerRoute";
 import BuyerRoute from "./BuyerRoute";
 import Blogs from "../../Pages/Blogs/Blogs";
+import MobileNavMenu from "../../Shared/Header/MobileNavMenu";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "/mobile-nav",
+        element: <MobileNavMenu />,
       },
     ],
   },

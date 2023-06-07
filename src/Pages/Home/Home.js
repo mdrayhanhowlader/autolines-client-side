@@ -6,6 +6,9 @@ import useTitle from "./../../hooks/useTitle";
 import Exclusive from "./Exclusive";
 import BannerSlider from "./BannerSlider";
 import NewBanner from "./NewBanner";
+import MobileApp from "./MobileApp/MobileApp";
+import TopRated from "./TopRated/TopRated";
+import Comfort from "./Comfort/Comfort";
 
 const Home = () => {
   useTitle("Home");
@@ -16,7 +19,10 @@ const Home = () => {
       <NewBanner />
       <Advertised></Advertised>
       <Categories></Categories>
-      <Exclusive></Exclusive>
+      <MobileApp />
+      {/* <Exclusive></Exclusive> */}
+      <TopRated />
+      <Comfort />
     </div>
   );
 };
