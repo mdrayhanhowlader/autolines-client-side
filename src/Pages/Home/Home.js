@@ -9,6 +9,10 @@ import NewBanner from "./NewBanner";
 import MobileApp from "./MobileApp/MobileApp";
 import TopRated from "./TopRated/TopRated";
 import Comfort from "./Comfort/Comfort";
+import Safety from "./Safety/Safety";
+import RentCar from "./RentCar/RentCar";
+import MeetOurTeam from "./MeetOurTeam/MeetOurTeam";
+import PremiumCarsRental from "./PremiumCarsRental/PremiumCarsRental";
 
 const Home = () => {
   useTitle("Home");
@@ -17,12 +21,16 @@ const Home = () => {
       {/* <Banner></Banner> */}
       {/* <BannerSlider></BannerSlider> */}
       <NewBanner />
-      <Advertised></Advertised>
+      {/* <Advertised></Advertised> */}
       <Categories></Categories>
       <MobileApp />
       {/* <Exclusive></Exclusive> */}
       <TopRated />
       <Comfort />
+      <Safety />
+      <RentCar />
+      <MeetOurTeam />
+      <PremiumCarsRental />
     </div>
   );
 };

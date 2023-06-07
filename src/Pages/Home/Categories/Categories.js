@@ -17,7 +17,7 @@ const Categories = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full my-12">
       <div className="w-4/5 mx-auto">
         <h2 className="text-3xl text-[#571F22] font-semibold pb-4">
           Explore Cars by Categories
